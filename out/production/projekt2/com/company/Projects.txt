@@ -1,0 +1,3 @@
+Project1_MARIAN,ANDRZEJ_Planned_who;when;what,who;when;what_LOG1,LOG2,LOG3,_0_0
+Project2_MARIAN_Planned_who;when;what,who;when;what_LOG1,LOG2,LOG3,_0_0
+Project3_ANDRZEJ_Planned_who;when;what,who;when;what_LOG1,LOG2,LOG3,_0_0
