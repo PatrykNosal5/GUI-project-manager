@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class Base {
     DataReader rootReader = new DataReader();
-    String[][] projectTab = rootReader.read("com\\company\\Projects.txt");
+    String[][] projectTab = rootReader.read("src/com/company/Projects.txt");
     HashMap<String, String> logininfo = new HashMap<>();
     JList jlist = new JList();
 
@@ -22,7 +22,7 @@ public class Base {
     }
     public void readProjects() {
 
-        File f = new File("com\\company\\Projects.txt");
+        File f = new File("src/com/company/Projects.txt");
         try {
             String[] Res = new String[100];
 
@@ -53,7 +53,7 @@ public class Base {
     }
         public void readMyProjects(String nickname) {
 
-            File f = new File("com\\company\\Projects.txt");
+            File f = new File("src/com/company/Projects.txt");
             try {
                 //CHCEMY dostac sie tylko do tych projektow ktore zawieraja w sobie w wierszu nasz nick
                 String[] Res = new String[100];

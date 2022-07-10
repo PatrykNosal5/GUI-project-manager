@@ -18,8 +18,8 @@ public class ManagerProjectWindow extends JFrame{
     Base base = new Base();
         base.readProjects();
     DataReader rootReader = new DataReader();
-    String[][] empTab = rootReader.read("com\\company\\empData.txt");
-    String[][] projectTab = rootReader.read("com\\company\\Projects.txt");
+    String[][] empTab = rootReader.read("src/com/company/empData.txt");
+    String[][] projectTab = rootReader.read("src/com/company/Projects.txt");
     DataConverter dc1 = new DataConverter();
     ArrayList<ArrayList<String>> LISTOFPROJECTS = dc1.getProjectList();
     ArrayList<ArrayList<String>> LISTOFEMP = dc1.getEmpList();
@@ -158,7 +158,7 @@ public class ManagerProjectWindow extends JFrame{
                     arrayOfComments[row][1] = "";
                     arrayOfComments[row][2] = "";
                     StringBuilder builder = new StringBuilder();
-                    File f = new File("com\\company\\Projects.txt");
+                    File f = new File("src/com/company/Projects.txt");
                     String[] newLine = projectTab[finalProjectIndex];
                     newLine[3]="";
                     for (int k = 0; k < arrayOfComments.length; k++) {
@@ -188,7 +188,7 @@ public class ManagerProjectWindow extends JFrame{
                     }
                     BufferedWriter writer;
                     try {
-                        writer = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                        writer = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                         writer.write(builder.toString());
                         writer.close();
                     } catch (IOException ex) {
@@ -198,7 +198,7 @@ public class ManagerProjectWindow extends JFrame{
                     StringBuilder builder2 = new StringBuilder();
                     projectTab[finalProjectIndex][4] += loginProjectWindow + " deleted a comment at " + ProjectName+ " on " + date +",";
 
-                    File ff = new File("com\\company\\Projects.txt");
+                    File ff = new File("src/com/company/Projects.txt");
                     ff.delete();
 
 
@@ -213,7 +213,7 @@ public class ManagerProjectWindow extends JFrame{
                     }
                     BufferedWriter writer2 = null;
                     try {
-                        writer2 = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                        writer2 = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                         writer2.write(builder2.toString());
                         writer2.close();
                     } catch (IOException ex) {

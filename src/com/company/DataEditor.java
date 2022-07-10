@@ -25,7 +25,7 @@ public class DataEditor extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                         DataReader rootReader = new DataReader();
-                        String[][] empTab = rootReader.read("com\\company\\empData.txt");
+                        String[][] empTab = rootReader.read("src/com/company/empData.txt");
                         int index = 0;
                         for (int i = 0; i < empTab.length; i++) {
                             if (empTab[i][4].equals(login)) {
@@ -40,7 +40,7 @@ public class DataEditor extends JFrame {
                         };
                         empTab[index][number] = jtf.getText();
                         StringBuilder builder = new StringBuilder();
-                        File f = new File("com\\company\\empData.txt");
+                        File f = new File("src/com/company/empData.txt");
                         f.delete();
                         for (int i = 0; i < empTab.length; i++) {
                                 for (int j = 0; j < 8; j++) {
@@ -53,7 +53,7 @@ public class DataEditor extends JFrame {
                             }
                         BufferedWriter writer = null;
                         try {
-                            writer = new BufferedWriter(new FileWriter("com\\company\\empData.txt"));
+                            writer = new BufferedWriter(new FileWriter("src/com/company/empData.txt"));
                             writer.write(builder.toString());
                             writer.close();
                         } catch (IOException ex) {

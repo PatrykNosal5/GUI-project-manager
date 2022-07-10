@@ -26,7 +26,7 @@ public class ProjectAdder extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 StringBuilder builder = new StringBuilder();
-                File f = new File("com\\company\\Projects.txt");
+                File f = new File("src/com/company/Projects.txt");
                 f.delete();
 
 
@@ -46,7 +46,7 @@ public class ProjectAdder extends JFrame {
                 }
                 BufferedWriter writer = null;
                 try {
-                    writer = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                    writer = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                     writer.write(builder.toString());
                     writer.close();
                 } catch (IOException ex) {

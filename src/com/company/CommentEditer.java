@@ -28,7 +28,7 @@ public class CommentEditer extends JFrame {
                 if (arrayOfComments[row][0].equals(loginProjectWindow)) {
                     arrayOfComments[row][2] = jtf.getText();
                     StringBuilder builder = new StringBuilder();
-                    File f = new File("com\\company\\Projects.txt");
+                    File f = new File("src/com/company/Projects.txt");
                     String[] newLine = projectTab[finalProjectIndex];
                     newLine[3]="";
                     for (int k = 0; k < arrayOfComments.length; k++) {
@@ -56,7 +56,7 @@ public class CommentEditer extends JFrame {
                     }
                     BufferedWriter writer;
                     try {
-                        writer = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                        writer = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                         writer.write(builder.toString());
                         writer.close();
                     } catch (IOException ex) {
@@ -66,7 +66,7 @@ public class CommentEditer extends JFrame {
                     StringBuilder builder2 = new StringBuilder();
                     projectTab[finalProjectIndex][4] += loginProjectWindow + " edited a comment at " + projectTab[finalProjectIndex][0]+ " on " + date +",";
 
-                    File ff = new File("com\\company\\Projects.txt");
+                    File ff = new File("src/com/company/Projects.txt");
                     ff.delete();
 
 
@@ -81,7 +81,7 @@ public class CommentEditer extends JFrame {
                     }
                     BufferedWriter writer2 = null;
                     try {
-                        writer2 = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                        writer2 = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                         writer2.write(builder2.toString());
                         writer2.close();
                     } catch (IOException ex) {

@@ -9,9 +9,9 @@ public class DataConverter {
     DataConverter(){
 
         DataReader rootReader = new DataReader();
-        String[][] empTab = rootReader.read("com\\company\\empData.txt");
+        String[][] empTab = rootReader.read("src/com/company/empData.txt");
         int howManyEmp = empTab.length;
-        String[][] projectTab = rootReader.read("com\\company\\Projects.txt");
+        String[][] projectTab = rootReader.read("src/com/company/Projects.txt");
         int howManyProjects = projectTab.length;
 
         ArrayList<ArrayList<String>> superEmpList = new ArrayList<>();

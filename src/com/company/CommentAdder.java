@@ -27,7 +27,7 @@ public class CommentAdder extends JFrame {
                 StringBuilder builder = new StringBuilder();
                 tabOfProjects[projectIndex][3] += "," + commentLogin + ";" + date + ";" + jtf.getText();
 
-                File f = new File("com\\company\\Projects.txt");
+                File f = new File("src/com/company/Projects.txt");
                 f.delete();
 
 
@@ -42,7 +42,7 @@ public class CommentAdder extends JFrame {
                 }
                 BufferedWriter writer = null;
                 try {
-                    writer = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                    writer = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                     writer.write(builder.toString());//save the string representation of the board
                     writer.close();
                 } catch (IOException ex) {
@@ -52,7 +52,7 @@ public class CommentAdder extends JFrame {
                     StringBuilder builder2 = new StringBuilder();
                 tabOfProjects[projectIndex][4] += commentLogin + " commented " + ProjectName+ " on " + date +",";
 
-                    File ff = new File("com\\company\\Projects.txt");
+                    File ff = new File("src/com/company/Projects.txt");
                     ff.delete();
 
 
@@ -67,7 +67,7 @@ public class CommentAdder extends JFrame {
                     }
                     BufferedWriter writer2 = null;
                     try {
-                        writer2 = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                        writer2 = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                         writer2.write(builder2.toString());
                         writer2.close();
                     } catch (IOException ex) {

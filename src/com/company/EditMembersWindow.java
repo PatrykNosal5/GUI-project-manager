@@ -35,7 +35,7 @@ public class EditMembersWindow extends JFrame {
                 "Nickname"
         };
         DataReader files  = new DataReader();
-        String[][] data = files.read("com\\company\\empData.txt");
+        String[][] data = files.read("src/com/company/empData.txt");
         JTable workers = new JTable(data, columnNames);
         JScrollPane workersScroll = new JScrollPane(workers);
         workers.setDefaultEditor(Object.class, null);
@@ -66,7 +66,7 @@ public class EditMembersWindow extends JFrame {
                         Date date = new Date();
                         allProjectsArray[projectIndex][4] +=date + "-" + login + " has added:" +selectedWorkerData[4] + " to:"+  allProjectsArray[projectIndex][0]+",";
                         allProjectsArray[projectIndex][1]+=","+selectedWorkerData[4];
-                        File f = new File("com\\company\\Projects.txt");
+                        File f = new File("src/com/company/Projects.txt");
                         f.delete();
                         for(int k = 0; k < allProjectsArray.length; k++) {
                             for(int j = 0; j < 7; j++){
@@ -79,7 +79,7 @@ public class EditMembersWindow extends JFrame {
                         }
                         BufferedWriter writer = null;
                         try {
-                            writer = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                            writer = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                             writer.write(builder.toString());//save the string representation of the board
                             writer.close();
                         } catch (IOException ex) {
@@ -128,7 +128,7 @@ public class EditMembersWindow extends JFrame {
                         allProjectsArray[projectIndex][1] = allProjectsArray[projectIndex][1].substring(0, allProjectsArray[projectIndex][1].length() - 1);
                     }
                         StringBuilder builder = new StringBuilder();
-                        File f = new File("com\\company\\Projects.txt");
+                        File f = new File("src/com/company/Projects.txt");
                         f.delete();
                         for(int k = 0; k < allProjectsArray.length; k++) {
                             for(int j = 0; j < 7; j++){
@@ -141,7 +141,7 @@ public class EditMembersWindow extends JFrame {
                         }
                         BufferedWriter writer = null;
                         try {
-                            writer = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                            writer = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                             writer.write(builder.toString());//save the string representation of the board
                             writer.close();
                         } catch (IOException ex) {

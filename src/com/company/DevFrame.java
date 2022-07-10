@@ -11,8 +11,8 @@ public class DevFrame extends JFrame {
         base.readMyProjects(loginDevFrame);
 
         DataReader rootReader = new DataReader();
-        String[][] empTab = rootReader.read("com\\company\\empData.txt");
-        String[][] projectTab = rootReader.read("com\\company\\Projects.txt");
+        String[][] empTab = rootReader.read("src/com/company/empData.txt");
+        String[][] projectTab = rootReader.read("src/com/company/Projects.txt");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1080, 400);
         this.setLocationRelativeTo(null);

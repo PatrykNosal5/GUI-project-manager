@@ -17,8 +17,8 @@ public class ManFrame extends JFrame {
             base.readProjects();
 
             DataReader rootReader = new DataReader();
-            String[][] empTab = rootReader.read("com\\company\\empData.txt");
-            projectTab = rootReader.read("com\\company\\Projects.txt");
+            String[][] empTab = rootReader.read("src/com/company/empData.txt");
+            projectTab = rootReader.read("src/com/company/Projects.txt");
 
 
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,7 +52,7 @@ public class ManFrame extends JFrame {
                     "Status"
             };
             DataReader files  = new DataReader();
-            String[][] data = files.read("com\\company\\empData.txt");
+            String[][] data = files.read("src/com/company/empData.txt");
             JTable workers = new JTable(data, columnNames);
             JScrollPane workersScroll = new JScrollPane(workers);
             workersScroll.setPreferredSize(new Dimension(630,170));
@@ -158,7 +158,7 @@ public class ManFrame extends JFrame {
                            String nickname = data[y][4];
                            if(!data[y][2].equals("MAN")) {
                                    StringBuilder builder = new StringBuilder();
-                                   File f = new File("com\\company\\empData.txt");
+                                   File f = new File("src/com/company/empData.txt");
                                    f.delete();
                                    for (int i = 0; i < empTab.length; i++) {
                                            if (i != y) {
@@ -174,7 +174,7 @@ public class ManFrame extends JFrame {
                                    }
                                    BufferedWriter writer;
                                    try {
-                                           writer = new BufferedWriter(new FileWriter("com\\company\\empData.txt"));
+                                           writer = new BufferedWriter(new FileWriter("src/com/company/empData.txt"));
                                            writer.write(builder.toString());//save the string representation of the board
                                            writer.close();
                                    } catch (IOException ex) {
@@ -182,7 +182,7 @@ public class ManFrame extends JFrame {
                                    }
                                    //==========================================================================
                                    StringBuilder builder2 = new StringBuilder();
-                                   File f2 = new File("com\\company\\Projects.txt");
+                                   File f2 = new File("src/com/company/Projects.txt");
                                    f2.delete();
                                    for (int i = 0; i < projectTab.length; i++) {
                                            String[] array1 = projectTab[i][1].split(",");
@@ -213,7 +213,7 @@ public class ManFrame extends JFrame {
                                    }
                                    BufferedWriter writer2;
                                    try {
-                                           writer2 = new BufferedWriter(new FileWriter("com\\company\\Projects.txt"));
+                                           writer2 = new BufferedWriter(new FileWriter("src/com/company/Projects.txt"));
                                            writer2.write(builder2.toString());
                                            writer2.close();
                                    } catch (IOException ex) {
